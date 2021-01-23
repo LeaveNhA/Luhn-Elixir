@@ -4,9 +4,9 @@ defmodule Luhn do
   @acceptableSpecialCharacters [" "]
   @acceptableCharacters for n <- ?0..?9, do: << n :: utf8 >>
 
-  @doc """
-  Checks if the given number is valid via the luhn formula
-  """
+                        @doc """
+                        Checks if the given number is valid via the luhn formula
+                        """
   @spec valid?(String.t()) :: boolean
   def valid?(number) do
     validate(number)
@@ -36,6 +36,6 @@ defmodule Luhn do
 
   defp validation_helper(%{true => _}), do: false
   defp validation_helper(%{true => invalids, false => valids}),
-  do: Enum.count(invalids) == 0 and Enum.count(valids) > 1
+    do: Enum.count(invalids) == 0 and Enum.count(valids) > 1
   defp validation_helper(%{false => valids}), do: Enum.count(valids) > 1
 end
