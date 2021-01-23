@@ -4,9 +4,9 @@ defmodule Luhn do
   @acceptableSpecialCharacters [" "]
   @acceptableCharacters for n <- ?0..?9, do: << n :: utf8 >>
 
-                        @doc """
-                        Checks if the given number is valid via the luhn formula
-                        """
+  @doc """
+  Checks if the given number is valid via the luhn formula
+  """
   @spec valid?(String.t()) :: boolean
   def valid?(number) do
     validate(number)
